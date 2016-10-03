@@ -248,7 +248,7 @@ namespace WindowsFormsApplication1
             Random random = new Random();
             int n = random.Next(3, 19);
             textBox1.Text = n.ToString();
-            switch (n)//特效
+            switch (n)
             {
                 case 18:
                     textBox1.BackColor = Color.FromArgb(255, 23, 140);
@@ -301,6 +301,217 @@ namespace WindowsFormsApplication1
                     textBox1.BackColor = Color.FromArgb(255, 255, 255);
                     break;
             }
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            Form2 nf = new Form2();
+            nf.ShowDialog();
+
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication1
+{
+    public partial class Form2 : Form
+    {
+        double number1, number2, number3, number4;
+        int pos;
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            addNum(2);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            addNum(3);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            addNum(4);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            addNum(5);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            addNum(6);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            addNum(7);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            addNum(8);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            addNum(9);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            addNum(0);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + ".";
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "输入提示的数值:";
+            textBox2.Text = "";
+            number1 = 0;
+            number2 = 0;
+            pos = 0;
+            textBox1.BackColor = Color.FromArgb(255, 255, 255);
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "Profit before interest and tax:";
+            pos = 1;
+            this.button14.Visible = true;
+            this.button15.Visible = false;
+            this.button16.Visible = false;
+            this.button17.Visible = false;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            number1 = Convert.ToDouble(textBox2.Text);
+            switch (pos)
+            {
+                case (1):
+                    textBox1.Text = "Total assets:";
+                    this.button14.Visible = false;
+                    this.button15.Visible = true;
+                    textBox2.Text = "";
+                    break;
+                case (2):
+                    textBox1.Text = "term debet:";
+                    this.button14.Visible = false;
+                    this.button15.Visible = true;
+                    textBox2.Text = "";
+                    break;
+                case (3):
+                    textBox1.Text = "Cn:";
+                    this.button14.Visible = false;
+                    this.button15.Visible = true;
+                    textBox2.Text = "";
+                    break;
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            number2 = Convert.ToDouble(textBox2.Text);
+            switch (pos)
+            {
+                case (1):
+                    textBox1.Text = "current liabilities:";
+                    this.button15.Visible = false;
+                    this.button16.Visible = true;
+                    textBox2.Text = "";
+                    break;
+                case (2):
+                    textBox1.Text = "shareholders' equity:";
+                    this.button15.Visible = false;
+                    this.button16.Visible = true;
+                    textBox2.Text = "";
+                    break;
+                case (3):
+                    textBox1.Text = "ZOQ:";
+                    textBox2.Text = Convert.ToString(Math.Sqrt((number1*2) / number2));
+                    break;
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            number3 = Convert.ToDouble(textBox2.Text);
+            switch (pos)
+            {
+                case (1):
+                    textBox1.Text = "Return on capital employed:";
+                    textBox2.Text = Convert.ToString(number1 / (number2 - number3));
+                    break;
+                case (2):
+                    textBox1.Text = "total long-term debt";
+                    this.button16.Visible = false;
+                    this.button17.Visible = true;
+                    textBox2.Text = "";
+                    break;
+
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            number4 = Convert.ToDouble(textBox2.Text);
+            switch (pos)
+            { 
+                case (2):
+                    textBox1.Text = "Gearing:";
+                    textBox2.Text = Convert.ToString((number1-number2) / (number3 + number4));
+                    break;
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "Total lony:";
+            pos = 2;
+            this.button14.Visible = true;
+            this.button15.Visible = false;
+            this.button16.Visible = false;
+            this.button17.Visible = false;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "C0D:";
+            pos = 3;
+            this.button14.Visible = true;
+            this.button15.Visible = false;
+            this.button16.Visible = false;
+            this.button17.Visible = false;
+        }
+
+        public void addNum(int num)
+        {
+            textBox2.Text = textBox2.Text + num.ToString();
+
+        }
+        public Form2()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            addNum(1);
         }
     }
 }
