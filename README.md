@@ -321,7 +321,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1//经济计算器
+namespace WindowsFormsApplication1
 {
     public partial class Form2 : Form
     {
@@ -421,6 +421,12 @@ namespace WindowsFormsApplication1//经济计算器
                     this.button15.Visible = true;
                     textBox2.Text = "";
                     break;
+                case (4):
+                    textBox1.Text = "Profit distributable to ordinary shareholders:";
+                    this.button14.Visible = false;
+                    this.button15.Visible = true;
+                    textBox2.Text = "";
+                    break;
             }
         }
 
@@ -445,6 +451,12 @@ namespace WindowsFormsApplication1//经济计算器
                     textBox1.Text = "ZOQ:";
                     textBox2.Text = Convert.ToString(Math.Sqrt((number1*2) / number2));
                     break;
+                case (4):
+                    textBox1.Text = "Weighted coverage number of ordinary shares:";
+                    this.button15.Visible = false;
+                    this.button16.Visible = true;
+                    textBox2.Text = "";
+                    break;
             }
         }
 
@@ -458,10 +470,14 @@ namespace WindowsFormsApplication1//经济计算器
                     textBox2.Text = Convert.ToString(number1 / (number2 - number3));
                     break;
                 case (2):
-                    textBox1.Text = "total long-term debt";
+                    textBox1.Text = "total long-term debt:";
                     this.button16.Visible = false;
                     this.button17.Visible = true;
                     textBox2.Text = "";
+                    break;
+                case (4):
+                    textBox1.Text = "Price earning ratio:";
+                    textBox2.Text = Convert.ToString(number1 / (number2 / number3));
                     break;
 
             }
@@ -493,6 +509,16 @@ namespace WindowsFormsApplication1//经济计算器
         {
             textBox1.Text = "C0D:";
             pos = 3;
+            this.button14.Visible = true;
+            this.button15.Visible = false;
+            this.button16.Visible = false;
+            this.button17.Visible = false;
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "Market price of share:";
+            pos = 4;
             this.button14.Visible = true;
             this.button15.Visible = false;
             this.button16.Visible = false;
