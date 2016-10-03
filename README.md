@@ -303,7 +303,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void button29_Click(object sender, EventArgs e)
+        private void button29_Click(object sender, EventArgs e)//跳转到金融公式计算器
         {
             Form2 nf = new Form2();
             nf.ShowDialog();
@@ -321,7 +321,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace WindowsFormsApplication1//经济计算器
 {
     public partial class Form2 : Form
     {
